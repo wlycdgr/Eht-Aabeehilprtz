@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>The Alphabetizer</title>
+        <link href="main.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="main">
+            <div id="content">
+                <div id="titleContainer" class="sectionContainer">
+                    <span id="title">Eht Aabeehilprtz</span>
+                </div>
+                <div id="inputAreaContainer" class="sectionContainer">
+                    <p class="sectionHeader">Input</p>
+                    <div id="separatorSelectDropdownContainer" class="subsectionContainer">
+                        <label for="separatorSelectDropdown">Separator:</label>
+                        <br>
+                        <select id="separatorSelectDropdown">
+                            <option value="none" selected>None - Input will be treated as a single item</option>
+                            <option value="newline">Newline</option>
+                            <option value="comma">Comma</option>
+                            <option value="space">Space</option>
+                        </select>
+                    </div>
+                    <div id="itemInputContainer" class="sectionContainer">
+                        <label for="inputTextarea">Add an item or a list of items and press enter:</label>
+                        <br>
+                        <textarea id="inputTextarea"></textarea>
+                    </div>
+                </div>
+                <div id="outputAreaContainer" class="sectionContainer">
+                    <p class="sectionHeader">Output</p>
+                    <label for="caseSensitityCheckbox">Case sensitive</label>
+                    <input type="checkbox" id="caseSensitityCheckbox" />
+                    <div id="output" class="subsectionContainer" readonly></div>
+                </div>
+                <ul id="listContainer" class="sectionContainer"></ul>
+            </div>
+            <div id="toolbar">
+                <div class="buttonContainer">
+                    <button id="startOverButton">Start Over</button>
+                </div>
+                <div class="buttonContainer">
+                    <button id="downloadTXTButton">Download TXT</button>
+                </div>
+                <div class="sectionContainer">
+                    <button id="downloadCSVButton">Download CSV</button>
+                </div>
+            </div>
+        </div>
+        <script src="main.js" type="module"></script>
+    </body>
+</html>

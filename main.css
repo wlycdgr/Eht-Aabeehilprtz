@@ -1,0 +1,49 @@
+#main {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    /* background-color: pink; */
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+}
+
+#toolbar {
+    width: 150px;
+}
+
+#title {
+    font-family: sans-serif;
+    font-size: 36px;
+    color: #222222;
+}
+
+.sectionHeader {
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+.sectionContainer {
+    margin-bottom: 20px;
+}
+
+.buttonContainer {
+    margin-bottom: 20px;
+}
+
+#inputTextarea {
+    width: 400px;
+    height: 200px;
+    resize: none;
+}
+
+.subsectionContainer {
+    margin-bottom: 20px;
+}
+
+#toolbar {
+    margin-top: 78px;
+}
