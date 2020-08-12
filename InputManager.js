@@ -49,7 +49,6 @@ export default class InputManager {
 
         // Submit on Enter
         if (e.data === null) {
-            console.log(e.target.value);
             const input = this._inputTextareaEl.value;
             switch (this.separator) {
                 case "none":
