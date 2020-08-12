@@ -28,6 +28,7 @@ export default class OutputManager {
 
     reset() {
         this._items.length = 0;
+        this._displayItems.length = 0;
         this._display();
     }
 
