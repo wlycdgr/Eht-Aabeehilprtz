@@ -27,13 +27,10 @@ export default class InputManager {
     }
 
     _handleUpdateSelection(e) {
-        console.log(this);
         this.separator = e.target.value;
     }
 
     _handleInput(e) {
-        console.log(e);
-
         // Don't fuck with Paste
         if (e.inputType === "insertFromPaste") {
             return;

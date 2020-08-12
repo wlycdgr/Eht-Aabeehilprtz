@@ -58,7 +58,6 @@ export default class OutputManager {
 
     _handleDupeHandlingRadioClick(e) {
         const t = e.target;
-        console.log(t);
 
         if (t.id === "radioLeave") {
             this._duplicateHandlingMethod = "leave";
@@ -101,8 +100,6 @@ export default class OutputManager {
                 }
             });
 
-            console.log(itemCounts);
-
             // create new array with dupes replaced by counts
             const groupedDisplayItems = [];
             Object.entries(itemCounts).forEach(itemCount => {
@@ -117,8 +114,6 @@ export default class OutputManager {
 
             this._displayItems = [...groupedDisplayItems];
         }
-
-        console.log(this._displayItems);
 
         // Handle ignore case setting
         const ignoreCase = this._ignoreCaseCheckboxEl.checked;

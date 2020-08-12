@@ -10,17 +10,12 @@ function onSubmit(value) {
 }
 
 function handleStartOverClick(e) {
-    console.log(e);
-
     inputManager.reset();
-
     outputManager.reset();
 }
 
 // As per https://stackoverflow.com/questions/3665115/how-to-create-a-file-in-memory-for-user-to-download-but-not-through-server/18197341#18197341
 function handleDownloadClick(e) {
-    console.log(e);
-
     const buttonId = e.target.id;
 
     // This works only because there are only two buttons: Download TXT and Download CSV
@@ -50,8 +45,6 @@ function handleDownloadClick(e) {
 }
 
 function handleOnload() {
-    console.log("Top of document.onload handler");
-
     inputManager = new InputManager('separatorSelectDropdown', 'inputTextarea', onSubmit);
     outputManager = new OutputManager('output', 'ignoreCaseCheckbox', 'duplicateHandlingRadioFieldset');
 
