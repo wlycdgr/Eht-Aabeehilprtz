@@ -3,6 +3,7 @@ import OutputManager from './OutputManager.js';
 
 let inputManager;
 let outputManager;
+let fileCounter = 1;
 
 function onSubmit(value) {
     outputManager.add(value);
@@ -27,7 +28,7 @@ function handleDownloadClick(e) {
     const ext = buttonId === "downloadTXTButton" ? 'txt' : 'csv';
 
     const blob = new Blob([outputManager.get(ext)], {type: filetype});
-    const filename = `blobsfoster.${ext}`;
+    const filename = `alphabetizer_results_${fileCounter}.${ext}`;
 
     // Support freakin' IE11 cos why not
     if (window.navigator.msSaveOrOpenBlob) {
@@ -44,13 +45,15 @@ function handleDownloadClick(e) {
     dl.click();
     document.body.removeChild(dl);
     window.URL.revokeObjectURL(url);
+
+    fileCounter += 1;
 }
 
 function handleOnload() {
     console.log("Top of document.onload handler");
 
     inputManager = new InputManager('separatorSelectDropdown', 'inputTextarea', onSubmit);
-    outputManager = new OutputManager('output', 'ignoreCaseCheckbox');
+    outputManager = new OutputManager('output', 'ignoreCaseCheckbox', 'duplicateHandlingRadioFieldset');
 
     const startOverButton = document.getElementById('startOverButton');
     startOverButton.addEventListener('click', handleStartOverClick);

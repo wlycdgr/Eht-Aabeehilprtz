@@ -30,23 +30,41 @@
                     </div>
                 </div>
                 <div id="outputAreaContainer" class="sectionContainer">
-                    <p class="sectionHeader">Output</p>
-                    <label for="ignoreCaseCheckbox">Ignore case</label>
-                    <input type="checkbox" id="ignoreCaseCheckbox" checked />
-                    <br><br>
                     <div id="output" class="subsectionContainer" readonly></div>
                 </div>
                 <ul id="listContainer" class="sectionContainer"></ul>
             </div>
             <div id="toolbar">
-                <div class="buttonContainer">
-                    <button id="startOverButton">Start Over</button>
+                <p class="sectionHeader">Output Options</p>
+                <div>
+                    <label for="ignoreCaseCheckbox">Ignore case</label>
+                    <input type="checkbox" id="ignoreCaseCheckbox" checked />
                 </div>
+                <br>
+                <fieldset id="duplicateHandlingRadioFieldset">
+                    <legend>Duplicates</legend>
+                    <div class="radioContainer">
+                        <label for="radioLeave">Leave</label>
+                        <input type="radio" id="radioLeave" name="duplicateHandling" value="leave" checked>
+                    </div>
+                    <div class="radioContainer">
+                        <label for="radioGroup">Group</label>
+                        <input type="radio" id="radioGroup" name="duplicateHandling" value="group">
+                    </div>
+                    <div class="radioContainer">
+                        <label for="radioRemove">Remove</label>
+                        <input type="radio" id="radioRemove" name="duplicateHandling" value="remove">
+                    </div>
+                 </fieldset>
+
                 <div class="buttonContainer">
                     <button id="downloadTXTButton">Download TXT</button>
                 </div>
                 <div class="sectionContainer">
                     <button id="downloadCSVButton">Download CSV</button>
+                </div>
+                <div class="buttonContainer">
+                    <button id="startOverButton">Start Over</button>
                 </div>
             </div>
         </div>
