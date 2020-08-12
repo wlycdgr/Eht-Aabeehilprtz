@@ -50,7 +50,7 @@ function handleOnload() {
     console.log("Top of document.onload handler");
 
     inputManager = new InputManager('separatorSelectDropdown', 'inputTextarea', onSubmit);
-    outputManager = new OutputManager('output');
+    outputManager = new OutputManager('output', 'ignoreCaseCheckbox');
 
     const startOverButton = document.getElementById('startOverButton');
     startOverButton.addEventListener('click', handleStartOverClick);

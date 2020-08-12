@@ -1,7 +1,12 @@
 export default class OutputManager {
-    constructor(outputElId) {
+    constructor(outputElId, ignoreCaseCheckboxElId) {
         this._items = [];
         this._outputEl = document.getElementById(outputElId);
+        this._ignoreCaseCheckboxEl =
+            document.getElementById(ignoreCaseCheckboxElId);
+        this._ignoreCaseCheckboxEl.addEventListener(
+            'click', this._handleIgnoreCaseCheckboxClick.bind(this)
+        );
     }
 
     add(newItems) {
@@ -10,7 +15,7 @@ export default class OutputManager {
         } else {
             this._items.push(...newItems);
         }
-        this._items.sort();
+        this._sort();
         this._display();
     }
 
@@ -41,5 +46,26 @@ export default class OutputManager {
             itemEl.innerText = `${item}\n`;
             this._outputEl.appendChild(itemEl);
         })
+    }
+
+    _handleIgnoreCaseCheckboxClick(e){
+        this._sort();
+        this._display();
+    }
+
+    _sort() {
+        const ignoreCase = this._ignoreCaseCheckboxEl.checked;
+
+        if (ignoreCase) {
+            this._items.sort((a, b) => {
+                if (a.toLowerCase() <= b.toLowerCase()) {
+                    return -1;
+                } else {
+                    return 1;
+                }
+            });
+        } else {
+            this._items.sort();
+        }
     }
 }
